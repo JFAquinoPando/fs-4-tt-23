@@ -1,10 +1,14 @@
+import { guardar, obtener } from "./persistencia.js"
+
+
 const formulario = document.querySelector("form")
 let listado = document.querySelector("#listado-actividades")
 const ingresarActividad = document.querySelector("input[name='actividad']")
 const botonDeAccion = document.querySelector("button#accion")
 
 
-let actividadNro = 1
+let actividadNro = parseInt( obtener("nro-actividad") ?? 1 ) 
+listado.innerHTML = obtener("actividades")
 formulario.addEventListener(
     "submit", function (evento) {
         evento.preventDefault()
@@ -36,6 +40,8 @@ formulario.addEventListener(
             listado.insertAdjacentHTML("beforeend", item)
         }
 
+        guardar("actividades", listado.innerHTML)
+        guardar("nro-actividad", actividadNro)
 
     }
 )

@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="./javascript/app.js"></script>
-    <script src="./javascript/archivo2.js"></script>
+    <script type="module" src="./javascript/app.js"></script>
     <link rel="stylesheet" href="./estilos/app.css">
     <script>
         //console.log("en el html", nombre);
@@ -30,16 +29,6 @@
             </form>
             <hr>
             <ul class="flex flex-col gap-2" id="listado-actividades">
-                <li class="flex justify-between actividad-1">
-                    <div class="texto">
-                        <input type="checkbox" id="actividad-1">
-                        <label for="actividad-1">Actividad #</label>
-                    </div>
-                    <div class="acciones">
-                        <button class="editar border rounded-md border-white p-2 bg-slate-100 text-gray-900">Editar</button>
-                        <button class="borrar border rounded-md border-white p-2 bg-red-600">Borrar</button>
-                    </div>
-                </li>
             </ul>
         </section>
     </main>
