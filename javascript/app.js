@@ -16,11 +16,15 @@ formulario.addEventListener(
         console.log("actividad: ", actividad);
         if (botonDeAccion.dataset.accion === "actualizar") {
             alert("Ahora vamos a actualizar el texto!")
+            const claseElemento = botonDeAccion.dataset.clase 
+            const itemBuscado = document.querySelector(`li.${claseElemento}`)
+            itemBuscado.querySelector("label").textContent = actividad
+
             botonDeAccion.dataset.accion = "guardar"
         } else {
             actividadNro = actividadNro + 1
             const item = `<li class="flex justify-between actividad-${actividadNro}">
-                    <div>
+                    <div class="texto">
                         <input type="checkbox" id="actividad-${actividadNro}">
                         <label for="actividad-${actividadNro}">${actividad}</label>
                     </div>
@@ -47,10 +51,21 @@ listado.addEventListener(
 
         if (elemento.tagName == "BUTTON" && elemento.classList.contains("editar")) {
             /* alert("Voy a editar esta actividad") */
-            let texto = elemento.closest("li").querySelector("label").textContent
+            let elementoPadre = elemento.closest("li").querySelector("label")
+            let texto = elementoPadre.textContent
+            let posicion = elementoPadre.getAttribute("for")
             /*  alert(texto) */
             ingresarActividad.value = texto
             botonDeAccion.setAttribute("data-accion", "actualizar")
+            botonDeAccion.setAttribute("data-clase", posicion)
+        }
+
+        if (elemento.tagName === "LABEL" || elemento.tagName === "INPUT") {
+            /* line-through */
+            const item = elemento.closest("div.texto")
+            item.querySelector("label").className = "line-through"
+            item.querySelector("input").setAttribute("disabled", true)
+
         }
     }
 )
