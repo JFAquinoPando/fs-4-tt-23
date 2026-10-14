@@ -210,6 +210,12 @@
             letter-spacing: -.035em;
         }
 
+        .demo-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         .reset-button {
             gap: 10px;
             min-height: 44px;
@@ -224,7 +230,21 @@
             transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
         }
 
-        .reset-button:hover {
+        .listener-button {
+            min-height: 44px;
+            padding: 0 16px;
+            border: 1px solid #bdc9bd;
+            border-radius: 999px;
+            background: #e9eddf;
+            color: var(--ink);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 700;
+            transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+        }
+
+        .reset-button:hover,
+        .listener-button:hover {
             transform: translateY(-2px);
             border-color: var(--ink);
             background: #e9ecdf;
@@ -820,10 +840,15 @@
                     <p class="section-kicker">Prueba por aquí</p>
                     <h2 class="section-title" id="examples-title">Un gesto, una respuesta.</h2>
                 </div>
-                <button class="reset-button" id="reset-demo" type="button">
-                    <span class="reset-icon" aria-hidden="true">↺</span>
-                    Reiniciar demo
-                </button>
+                <div class="demo-controls">
+                    <button class="listener-button" id="toggle-listeners" type="button" aria-pressed="true">
+                        Quitar escuchadores
+                    </button>
+                    <button class="reset-button" id="reset-demo" type="button">
+                        <span class="reset-icon" aria-hidden="true">↺</span>
+                        Reiniciar demo
+                    </button>
+                </div>
             </div>
 
             <div class="workspace">
