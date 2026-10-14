@@ -53,11 +53,18 @@ listado.addEventListener(
             /* alert("Voy a borrar esta actividad") */
             console.log(elemento.closest("li"), "¿viste?");
             elemento.closest("li").remove()
+            guardar("actividades", listado.innerHTML)
+            guardar("nro-actividad", actividadNro)
         }
 
         if (elemento.tagName == "BUTTON" && elemento.classList.contains("editar")) {
             /* alert("Voy a editar esta actividad") */
             let elementoPadre = elemento.closest("li").querySelector("label")
+            if (elementoPadre.classList.contains("line-through")) {
+                elemento.setAttribute("disabled", true)
+                alert("No puedes editar esto")
+                return 
+            }
             let texto = elementoPadre.textContent
             let posicion = elementoPadre.getAttribute("for")
             /*  alert(texto) */
@@ -71,6 +78,8 @@ listado.addEventListener(
             const item = elemento.closest("div.texto")
             item.querySelector("label").className = "line-through"
             item.querySelector("input").setAttribute("disabled", true)
+            guardar("actividades", listado.innerHTML)
+            guardar("nro-actividad", actividadNro)
 
         }
     }
