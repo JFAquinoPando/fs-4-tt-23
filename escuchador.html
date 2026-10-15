@@ -913,6 +913,180 @@
                 font-size: 11px;
             }
         }
+
+        :root {
+            color-scheme: light;
+            --ink: #102b4e;
+            --ink-soft: #536b84;
+            --paper: #edf3fa;
+            --card: #fbfdff;
+            --line: #d5e1ee;
+            --accent: #168fca;
+            --accent-soft: #dceefa;
+            --lime: #67d5ff;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+        }
+
+        .masthead {
+            background-color: #061a35;
+            background-image:
+                linear-gradient(90deg, #061a35 0%, rgb(6 26 53 / 96%) 38%, rgb(6 26 53 / 48%) 100%),
+                url("./assets/naval-radar.svg");
+            background-position: center, right center;
+            background-repeat: no-repeat;
+            background-size: cover, 58% 100%;
+        }
+
+        .masthead::before {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(90deg, transparent 36%, rgb(4 19 40 / 10%) 70%, rgb(4 19 40 / 35%));
+            content: "";
+            pointer-events: none;
+        }
+
+        .topline {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-mark {
+            border-color: rgb(103 213 255 / 55%);
+            color: var(--lime);
+        }
+
+        .edition,
+        .hero-description,
+        .hero-note,
+        .radar-copy {
+            color: #c5d8ec;
+        }
+
+        .masthead::after {
+            border-color: rgb(103 213 255 / 25%);
+            box-shadow: 0 0 0 34px rgb(103 213 255 / 5%), 0 0 0 82px rgb(103 213 255 / 5%);
+        }
+
+        .hero-note {
+            border-color: rgb(139 194 229 / 23%);
+            border-left-color: var(--lime);
+            background: rgb(8 34 66 / 76%);
+            box-shadow: 0 18px 48px rgb(0 10 28 / 22%);
+        }
+
+        .radar-scope {
+            border-color: rgb(103 213 255 / 48%);
+            background: radial-gradient(circle, rgb(103 213 255 / 13%), rgb(4 24 48 / 78%) 72%);
+            box-shadow: inset 0 0 24px rgb(103 213 255 / 11%), 0 0 24px rgb(20 153 207 / 14%);
+        }
+
+        .radar-scope::before,
+        .radar-scope::after {
+            background: rgb(103 213 255 / 24%);
+        }
+
+        .radar-ring {
+            stroke: rgb(103 213 255 / 38%);
+        }
+
+        .radar-blip {
+            fill: #e0f8ff;
+            filter: drop-shadow(0 0 3px #67d5ff);
+        }
+
+        .live-dot {
+            background: var(--lime);
+            box-shadow: 0 0 0 5px rgb(103 213 255 / 13%), 0 0 18px rgb(103 213 255 / 48%);
+        }
+
+        .section-kicker,
+        .card-index,
+        footer {
+            color: #617b97;
+        }
+
+        .section-title,
+        .demo-heading {
+            color: #102b4e;
+        }
+
+        .reset-button,
+        .listener-button {
+            border-color: #c3d5e7;
+            background-color: #f6faff;
+            color: #16385e;
+        }
+
+        .reset-button:hover,
+        .listener-button:hover {
+            border-color: #238dc0;
+            background: #e1f2fc;
+        }
+
+        .reset-icon,
+        .gesture-mark {
+            color: #168fca;
+        }
+
+        .gesture {
+            border-color: #cfe8f7;
+            background: #edf8ff;
+            color: #2b6f98;
+        }
+
+        .example-card,
+        .event-panel {
+            border-color: #d1dfed;
+            box-shadow: 0 14px 34px rgb(17 50 85 / 7%);
+        }
+
+        .example-card:hover {
+            border-color: #a9d8ef;
+            box-shadow: 0 22px 42px rgb(17 50 85 / 12%);
+        }
+
+        .event-panel {
+            border-color: #143e69;
+            background:
+                radial-gradient(circle at 100% 0%, rgb(62 180 230 / 18%), transparent 13rem),
+                linear-gradient(145deg, #0c2c50, #071b36 76%);
+            box-shadow: 0 18px 40px rgb(8 30 58 / 20%);
+        }
+
+        .panel-label,
+        .status-description,
+        .instruction {
+            color: #bdd1e5;
+        }
+
+        .event-rule {
+            background: rgb(204 228 245 / 20%);
+        }
+
+        .instruction {
+            border-left-color: var(--lime);
+            background: rgb(122 187 222 / 10%);
+        }
+
+        footer {
+            border-color: rgb(16 43 78 / 12%);
+        }
+
+        @media (max-width: 760px) {
+            .masthead {
+                background-position: center, 70% center;
+                background-size: cover, auto 100%;
+            }
+
+            .masthead::before {
+                background: linear-gradient(90deg, rgb(6 26 53 / 96%), rgb(6 26 53 / 71%));
+            }
+        }
     </style>
     <script type="module" src="./javascript/escuchar.js"></script>
 </head>
